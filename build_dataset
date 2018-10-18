@@ -1,0 +1,26 @@
+import csv
+
+
+def build_csv(file_path, data):
+
+    with open(file_path, 'a') as file:
+        writer = csv.writer(file)
+        writer.writerow(data)
+        file.close()
+
+    len_check = []
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            len_check.append(row)
+        file.close()
+    if len(len_check) > 200000:
+        with open(file_path, 'w') as file:
+            writer = csv.writer(file)
+            num = 0
+            for element in len_check:
+                if num > 500:
+                    writer.writerow(element)
+                num += 1
+            file.close()
+
