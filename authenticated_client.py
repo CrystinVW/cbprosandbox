@@ -1,4 +1,3 @@
-
 import hmac
 import hashlib
 import time
@@ -1019,6 +1018,6 @@ agent = AuthenticatedClient(passphrase='ENTER CREDS HERE',
                             b64secret='ENTER CREDS HERE',
                             key='ENTER CREDS HERE')
 
-
+# Checks to see if running properly
 # agent.run()
 # agent.place_limit_order(product_id='BTC-USD', side='buy', price=8888.88, size=0.1)
